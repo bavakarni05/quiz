@@ -1,0 +1,312 @@
+.host-waiting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: auto; /* Enable vertical scrolling */
+  width: 100%; /* Make it take full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.host-waiting-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Example: a semi-transparent dark overlay */
+  z-index: -1; /* Ensure it stays behind other content */
+  pointer-events: none; /* THIS IS THE KEY: Allows clicks to pass through */
+}
+
+.host-waiting-content {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%; /* Make it take full width of container */
+  max-width: none; /* Remove max-width restriction */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.host-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.host-header h1 {
+  color: #6a0dad; /* A vibrant purple */
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.room-info {
+  background-color: #e6f7ff; /* Light blue background */
+  border: 1px solid #91d5ff;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.room-code-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-code-label {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.room-code-value {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #6a0dad;
+  letter-spacing: 2px;
+}
+
+.copy-button {
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.participants-section {
+  background-color: #f0f8ff; /* Very light blue */
+  border: 1px solid #add8e6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+}
+
+.participants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.participants-title {
+  font-size: 1.5em;
+  color: #6a0dad;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.participant-count {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green text */
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.participants-list {
+  max-height: 250px; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable scrolling */
+  padding-right: 10px; /* Space for scrollbar */
+}
+
+.participants-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.participants-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.participants-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.participants-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.no-participants {
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+}
+
+.participant-item:hover {
+  transform: translateX(5px);
+}
+
+.participant-avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #6a0dad;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.participant-name {
+  font-size: 1.1em;
+  color: #333;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 30px;
+  /* These rules are for forcing visibility during debugging */
+  min-height: 80px; 
+  background-color: rgba(0, 255, 255, 0.2); /* Temporary: transparent cyan */
+  align-items: center;
+}
+
+.action-button {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  /* Force button size */
+  min-width: 180px;
+  min-height: 50px;
+}
+
+.cancel-button {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+.start-button {
+  background-color: #28a745; /* Green */
+  color: white;
+  /* Aggressive rules for forced visibility */
+  background: red !important; 
+  color: yellow !important; 
+  border: 5px solid blue !important; 
+  opacity: 1 !important; 
+  display: flex !important; 
+  visibility: visible !important; 
+  font-size: 1.5rem !important; 
+  padding: 1.5rem 2rem !important; 
+}
+
+.start-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.start-button:disabled {
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: not-allowed;
+  opacity: 0.5 !important; /* Make it clearly visible but indicate disabled */
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .host-waiting-container {
+    padding: 1rem;
+  }
+
+  .host-header h1 {
+    font-size: 2rem;
+  }
+
+  .room-code-value {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .participants-section {
+    padding: 1.5rem;
+  }
+} 

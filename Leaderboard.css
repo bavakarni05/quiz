@@ -1,0 +1,235 @@
+.leaderboard-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+  padding: 2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-container::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  top: -25%;
+  left: -25%;
+  animation: rotate 20s linear infinite;
+}
+
+.leaderboard-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.leaderboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffffff, #a8e6cf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leaderboard-table {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.6s ease-out;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out backwards;
+}
+
+.player-row:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.rank {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+}
+
+.rank.top-1 {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  color: #1a1c20;
+}
+
+.rank.top-2 {
+  background: linear-gradient(45deg, #c0c0c0, #a0a0a0);
+  color: #1a1c20;
+}
+
+.rank.top-3 {
+  background: linear-gradient(45deg, #cd7f32, #8b4513);
+  color: #1a1c20;
+}
+
+.player-info {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.player-score {
+  font-size: 1.2rem;
+  color: #a8e6cf;
+  font-weight: bold;
+}
+
+.score-change {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.score-change.positive {
+  color: #27ae60;
+}
+
+.score-change.negative {
+  color: #e74c3c;
+}
+
+.final-results {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.winner-announcement {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.action-button.primary {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+}
+
+.action-button.primary:hover {
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .leaderboard-container {
+    padding: 1rem;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .player-row {
+    padding: 0.8rem;
+  }
+
+  .rank {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  .player-name, .player-score {
+    font-size: 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+} 

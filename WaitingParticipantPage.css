@@ -1,0 +1,119 @@
+.waiting-participant-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+  padding: 2rem;
+}
+
+.back-button {
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #4f46e5;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  transform: translateX(-4px);
+}
+
+.waiting-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.room-info {
+  margin-bottom: 3rem;
+}
+
+.room-info h2 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.waiting-animation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.loading-circle {
+  width: 20px;
+  height: 20px;
+  background: #4f46e5;
+  border-radius: 50%;
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+.loading-circle:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-circle:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.waiting-container h1 {
+  color: #1f2937;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tips {
+  background: #f3f4f6;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.tips h3 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.tips ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips li {
+  color: #4b5563;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.tips li::before {
+  content: "•";
+  color: #4f46e5;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+} 

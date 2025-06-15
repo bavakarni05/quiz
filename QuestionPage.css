@@ -1,0 +1,262 @@
+.question-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+}
+
+.sidebar {
+  width: 280px;
+  background: #f3f4f6;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.back-button {
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #4f46e5;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-4px);
+}
+
+.room-code {
+  font-size: 1.1rem;
+  color: #1a1c20;
+  padding: 10px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.question-slides {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.question-slide {
+  padding: 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #1a1c20;
+}
+
+.question-slide:hover {
+  background: #e5e7eb;
+}
+
+.question-slide.selected {
+  background: #4f46e5;
+  color: white;
+}
+
+.create-game-button {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-game-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.question-editor {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.question-header h2 {
+  color: #1a1c20;
+  margin: 0;
+}
+
+.time-setting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.time-setting label {
+  color: #4b5563;
+}
+
+.time-setting input {
+  width: 70px;
+  padding: 8px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.time-setting span {
+  color: #4b5563;
+}
+
+.question-text {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: #f3f4f6;
+  color: #1a1c20;
+}
+
+.question-text:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.option-row input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.option-row input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f3f4f6;
+  color: #1a1c20;
+}
+
+.option-row input[type="text"]:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.add-question-button {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-question-button:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.create-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.create-form {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.create-form h2 {
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.create-form p {
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.participants {
+  font-weight: 500;
+  color: #6366f1;
+  margin: 20px 0;
+}
+
+.start-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+} 

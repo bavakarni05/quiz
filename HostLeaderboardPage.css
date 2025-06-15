@@ -1,0 +1,73 @@
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+}
+
+.leaderboard-container h1, .leaderboard-container h2 {
+  color: #61dafb;
+  margin-bottom: 20px;
+}
+
+.correct-answer-display {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #4CAF50;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  width: 80%;
+  max-width: 600px;
+}
+
+.leaderboard-item {
+  background-color: #3a3f47;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-rank {
+  font-weight: bold;
+  color: #ffc107;
+  width: 40px;
+  text-align: left;
+}
+
+.leaderboard-username {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 1.1em;
+}
+
+.leaderboard-score {
+  font-weight: bold;
+  color: #a7ffeb;
+}
+
+.leaderboard-end-button, .leaderboard-home-button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard-end-button:hover, .leaderboard-home-button:hover {
+  background-color: #e55337;
+} 
